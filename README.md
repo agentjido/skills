@@ -99,7 +99,7 @@ If you need a quick reminder, ask for the capability menu:
 $jido help
 ```
 
-The menu groups Jido's 19 detailed methods below eight internal routes. It
+The menu groups Jido's 20 detailed methods below nine internal routes. It
 gives one natural-language request for each capability. You still give Jido a
 goal in ordinary language. The routes and methods are not separate commands.
 
@@ -154,11 +154,14 @@ Jido uses only the steps that your goal needs, in this order:
 | Produce | Make one candidate result. |
 | Check | Check the candidate against its acceptance conditions with evidence. |
 | Deliver | Commit, push, open a pull request, merge, tag, or release, only with that authority. |
+| Close | End a requested effort with work preserved, temporary resources accounted for, and remaining work assigned. |
 
 Jido starts at the first step that your request does not already resolve. Its
 startup line uses these verbs, so you can see the selected sequence. The same
 line shows the authority level and the important limits. A separate request
-to improve a reusable work method uses an `improve` step.
+to improve a reusable work method uses an `improve` step. Closeout is optional
+and requires a request. Delivery alone does not select it. A closeout dry run
+shows proposed actions without changing files, Git state, processes, or chats.
 
 For a material or risky check, Jido uses a separate worker when the host
 supports one. When it cannot, it labels the verdict `self-checked`.

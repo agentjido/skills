@@ -1,6 +1,6 @@
 ---
 name: jido
-description: "Carry one goal to a checked result with the smallest sequence of steps that the goal needs: investigate, plan, delegate, produce, check, and deliver. Use when directly invoked or selected by standing user or workspace guidance for substantial or ambiguous work, such as research, diagnosis, planning, a multi-step change, a review, or Git delivery; skip simple questions, direct commands, small self-contained tasks, and another selected workflow."
+description: "Carry one goal to a checked result with the smallest sequence of steps that the goal needs: investigate, plan, delegate, produce, check, deliver, and close. Use when directly invoked or selected by standing user or workspace guidance for substantial or ambiguous work, such as research, diagnosis, planning, a multi-step change, a review, Git delivery, or work closeout; skip simple questions, direct commands, small self-contained tasks, and another selected workflow."
 metadata:
   kata-argument-hint: "[goal]"
   schema: kata.skill/v1
@@ -83,7 +83,7 @@ internal registry and routing source.
 
 If the direct request is exactly `$jido help`, return the capability menu from
 the registry and stop. Do not select a Kata, give a startup notice, or do
-work. Group all 19 detailed methods below their internal routes. Present each
+work. Group all 20 detailed methods below their internal routes. Present each
 example as a natural-language `$jido` request, not as a separate command.
 
 Use [references/routing-cases.md](references/routing-cases.md) when reviewing a
@@ -93,14 +93,16 @@ Remove `$jido` from a direct request and select the first unresolved internal
 Kata:
 
 ```text
-understand? -> shape? -> lead? -> work? -> verify? -> ship?
+understand? -> shape? -> lead? -> work? -> verify? -> ship? -> close?
 improve, for a reusable skill or work method
 dojo, only when the user names Dojo
 ```
 
 Each Kata is optional. Skip a Kata when its contract is already supported.
 Re-evaluate after each result because new evidence can expose an earlier
-unresolved contract. Do not run a Kata for ceremony.
+unresolved contract. Do not run a Kata for ceremony. Select `close` only when
+the request asks to end a defined effort. Delivery alone does not select
+closeout.
 
 Before substantial work, state the sequence and authority once in one line.
 Start each sequence step with the plain verb that

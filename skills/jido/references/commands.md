@@ -15,6 +15,7 @@ registry and routing source.
 | `verify` | check | `references/katas/verify.md` | general verification, security review |
 | `improve` | improve | `references/katas/improve.md` | maintain method, write method |
 | `ship` | deliver | `references/katas/ship.md` | Git delivery |
+| `close` | close | `references/katas/close.md` | work closeout |
 | `dojo` | evaluate | `references/katas/dojo.md` | saved or live controlled evaluation |
 
 The startup line uses the plain verb for each planned Kata, in sequence order.
@@ -24,7 +25,7 @@ the line. Do not use these verbs for other steps in the line.
 ## Help
 
 `$jido help` returns this capability menu and stops. It does not select or run
-a Kata. The eight routes group the 19 detailed methods. The methods are
+a Kata. The nine routes group the 20 detailed methods. The methods are
 capabilities, not separate public commands.
 
 | Route | Capability | Example request |
@@ -47,6 +48,7 @@ capabilities, not separate public commands.
 | Improve | Resolve a reusable-method finding. | `$jido assess this feedback about our review method` |
 | Improve | Write or revise a reusable method. | `$jido make this repeated review method reusable` |
 | Deliver | Commit, publish, watch, merge, tag, or release with exact authority. | `$jido commit this verified change only` |
+| Close | End a defined effort with work preserved and resources accounted for. | `$jido close out this effort; show the proposed actions first, without changing state` |
 | Evaluate | Inspect or run a controlled Dojo evaluation when explicitly requested. | `$jido Dojo: inspect the saved evaluation for this candidate` |
 
 After the table, add: `Give Jido a goal in ordinary language. Jido selects the
@@ -56,7 +58,7 @@ Do not present an internal route as a separate command.
 ## Sequence
 
 ```text
-understand? -> shape? -> lead? -> work? -> verify? -> ship?
+understand? -> shape? -> lead? -> work? -> verify? -> ship? -> close?
 improve, for a reusable skill or work method
 dojo, only when the user names Dojo
 ```
@@ -72,6 +74,10 @@ first unresolved contract and keep the order shown:
 | `work` | The result, scope, acceptance, and authority are known. | A candidate already exists, or the request asks only for a report, review, or delivery. |
 | `verify` | A candidate needs acceptance evidence. | Current matching evidence already proves each material condition. |
 | `ship` | The user asks for a commit, push, pull request, merge, tag, or release. | The requested result is local or delivery authority is absent. |
+| `close` | The user asks to end a defined effort and account for its work, resources, remaining obligations, or related chats. | The request asks only for delivery, status, or continued work. |
+
+Delivery alone does not select closeout. A closeout request does not grant
+publication, resource deletion, or chat archival authority by itself.
 
 A failed verification returns to the repair owner, then to verification. Jido
 keeps integration ownership through that return.
@@ -80,8 +86,9 @@ Common single-Kata requests:
 
 - repository state uses `understand` with the Git workbench method;
 - documentation, routines, and visual artifacts use `work`;
-- a security review uses `verify`; and
-- Git delivery of a verified change uses `ship`.
+- a security review uses `verify`;
+- Git delivery of a verified change uses `ship`; and
+- closeout of a defined effort uses `close`, including a read-only dry run.
 
 ## Selection rules
 
@@ -106,7 +113,7 @@ Common single-Kata requests:
 
 ## Vocabulary
 
-Use only the eight Kata names from the registry for a step. Acceptance,
+Use only the nine Kata names from the registry for a step. Acceptance,
 reflection, and handoff are results or transitions, not Katas. Do not use
 older output terms such as `deliver-value`, `accept`, `procedure`, a route
 label, or a former `kata-*` package name.
