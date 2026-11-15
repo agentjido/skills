@@ -144,7 +144,9 @@ Landing requires current evidence that the intended pull request is mergeable,
 required checks pass, required approvals exist, and no unresolved blocking
 review remains. Use the requested merge strategy or ask when the repository
 permits several materially different strategies. Re-check the merged state.
-Leave branch and worktree cleanup to a separate explicit request.
+Leave branch and worktree cleanup to a separate explicit request. Jido routes
+that request to the [Close Kata](../../katas/close.md), which also owns requested
+chat archival. Delivery alone does not select closeout.
 
 ## Report
 

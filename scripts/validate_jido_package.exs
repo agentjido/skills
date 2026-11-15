@@ -11,6 +11,7 @@ defmodule Jido.PackageValidator do
     "verify" => ~w(kata-verify kata-security),
     "improve" => ~w(kata-maintain-skill kata-write-skill),
     "ship" => ~w(kata-shipit),
+    "close" => ~w(kata-closeout),
     "dojo" => ~w(kata-dojo)
   }
 
@@ -22,6 +23,7 @@ defmodule Jido.PackageValidator do
     "verify" => "check",
     "improve" => "improve",
     "ship" => "deliver",
+    "close" => "close",
     "dojo" => "evaluate"
   }
 
@@ -38,7 +40,7 @@ defmodule Jido.PackageValidator do
 
     case errors do
       [] ->
-        IO.puts("validated Jido, Tutor, eight internal Katas, and 19 detailed methods")
+        IO.puts("validated Jido, Tutor, nine internal Katas, and 20 detailed methods")
 
       errors ->
         errors
@@ -61,7 +63,7 @@ defmodule Jido.PackageValidator do
       all_skill_files == expected,
       "internal methods and commands must not use the SKILL.md name"
     )
-    |> require(length(methods) == 19, "Jido must retain exactly 19 detailed general methods")
+    |> require(length(methods) == 20, "Jido must retain exactly 20 detailed general methods")
     |> validate_tutor_contract()
   end
 

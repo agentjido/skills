@@ -8,7 +8,7 @@ they do not grant the actions named in a request.
 | Context | Expected behavior |
 | --- | --- |
 | The requester starts the goal with `$jido`. | Use Jido. |
-| The requester sends exactly `$jido help`. | Show all 19 capabilities grouped by the eight routes, then stop. Do not select or run a Kata. |
+| The requester sends exactly `$jido help`. | Show all 20 capabilities grouped by the nine routes, then stop. Do not select or run a Kata. |
 | A standing user or workspace instruction prefers Jido and the work is substantial or ambiguous. | Use Jido. |
 | The request is a simple question, direct command, or small self-contained task. | Skip Jido. |
 | The requester selects another workflow or says not to use a skill. | Skip Jido. |
@@ -43,6 +43,10 @@ they do not grant the actions named in a request.
 | Make this repeated review method reusable. | `improve` | `improve` | Resolve the method finding before a change. |
 | Commit this verified change only. | `ship` | `ship` | Commit locally. Do not push. |
 | Push this verified change to the named branch. | `ship` | `ship` | Use a normal push. Do not infer merge or release authority. |
+| Close out this effort; show proposed actions only. | `close` | `close` | Read-only report. Do not change files, Git state, processes, or chats. |
+| Remove these task worktrees after their work is published. | `close` | `close` | Verify preservation and active use before removal. No new publication authority. |
+| Push this verified work, remove its task branches and worktrees, and archive its chats. | `ship` | `ship -> close` | Complete delivery first. Verify task ownership and preservation. Archive the coordinating chat last. |
+| End this experiment and retain its branch. | `close` | `close` | Record the retained branch, reason, and owner. No publication or deletion required. |
 | Test whether this skill is useful. | `improve` | `improve` | Do not infer Dojo. |
 | Dojo: inspect the saved evaluation for this candidate. | `dojo` | `dojo` | Inspect saved evidence only. Do not run live calls. |
 | Use the Elixir quality method on this project. | `work` | `work -> verify` | Use a host-exposed specialist skill or report it unavailable. |
@@ -72,3 +76,21 @@ task-specific limits. The line must not add a separate Jido announcement or
 final answer. A method name is optional and appears only when it explains a
 material boundary. The result still reports evidence, the exact limit, and
 whether the verdict is separate or self-checked.
+
+## Closeout cases
+
+| Condition | Expected behavior |
+| --- | --- |
+| A delivery request has completed, with no closeout request. | Do not select `close`, remove resources, or archive chats. |
+| The user says only “clean up this thread” and the actions are unclear. | Inspect and show the proposed actions. Do not infer publication, deletion, or archival authority. |
+| The request already grants the selected cleanup and archival actions. | Use that authority without asking for the same approval again. |
+| A task checkout is clean but contains unpublished unique commits. | Preserve the commits at an identified destination before removal. |
+| Ignored files contain required data. | Preserve that data before removing the checkout; a clean status is insufficient. |
+| A worker or process still needs a checkout. | Hold removal until use ends or an authorized handoff completes. |
+| Unrelated changes appear after the inventory. | Preserve them and reassess the affected action. |
+| A required integration or restart check fails. | Hold affected removal and archival; return to repair and verification within authority. |
+| A repair attempt fails unchanged. | Gather new evidence or change the approach; do not repeat the unchanged attempt or weaken the check. |
+| Required delivery or repair authority is missing. | Report the exact gap and next owner. Do not claim complete closeout. |
+| A host cannot archive a selected chat. | Report that required action as incomplete. Do not substitute permanent deletion. |
+| Task evidence exists only in a temporary checkout. | Preserve the evidence outside that checkout before removal. |
+| Some resources are shared with another effort. | Retain them and record their owner and reason. |

@@ -3,12 +3,12 @@
 Purpose: Record the public skill boundary and the current ownership and source
 location of the internal Jido methods.
 
-Last reviewed: 2026-11-09
+Last reviewed: 2026-11-14
 
 ## Public package
 
 `skills/jido/SKILL.md` and `skills/tutor/SKILL.md` are the two public Agent
-Skills. The eight internal Jido Kata contracts are below
+Skills. The nine internal Jido Kata contracts are below
 `skills/jido/references/katas/`. Detailed methods are below
 `skills/jido/references/methods/`. Tutor owns a separate learning result and
 keeps its internal commands and learning content below `skills/tutor/references/`.
@@ -28,6 +28,7 @@ clear. They are not public commands.
 | Verify | `kata-verify`, `kata-security` |
 | Improve | `kata-maintain-skill`, `kata-write-skill` |
 | Ship | `kata-shipit` |
+| Close | `kata-closeout` |
 | Dojo | `kata-dojo`, explicit request only |
 
 The [attribution register](attribution.md) records adapted sources and required
